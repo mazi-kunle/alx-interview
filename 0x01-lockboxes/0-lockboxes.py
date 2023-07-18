@@ -9,7 +9,6 @@ def canUnlockAll(boxes):
     unlocked = [0]
     for index, box in enumerate(boxes):
         for i in box:
-            print(i)
             if i < len(boxes) and i not in unlocked and i != index:
                 unlocked.append(i)
 
