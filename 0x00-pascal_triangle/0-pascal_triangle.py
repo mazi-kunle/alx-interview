@@ -1,7 +1,14 @@
 #!/usr/bin/python3
 '''This is a module'''
 
-from math import factorial
+
+def factorial(n):
+    '''
+    returns factorial of n
+    '''
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
 
 
 def combination(n):
