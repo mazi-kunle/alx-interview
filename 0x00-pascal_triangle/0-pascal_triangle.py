@@ -17,7 +17,7 @@ def combination(n):
     '''
     rows = []
     for r in range(n):
-        ans = int((factorial(n - 1) / (factorial(n - 1 - r) * factorial(r))))
+        ans = factorial(n - 1) // (factorial(n - 1 - r) * factorial(r))
         rows.append(ans)
 
     return rows
