@@ -43,13 +43,19 @@ def checkFormat(lst):
         checks += 1
 
     statusCodes = [200, 301, 400, 401, 403, 404, 405, 500]
-    if (type(eval(lst[7])) == int and
-            int(lst[7]) in statusCodes):
-        checks += 1
+    try:
+        if (type(eval(lst[7])) == int and
+                int(lst[7]) in statusCodes):
+            checks += 1
+    except Exception:
+        checks += 0
 
     filesize = lst[8].rstrip()
-    if type(eval(filesize)) == int:
-        checks += 1
+    try:
+        if type(eval(filesize)) == int:
+            checks += 1
+    except Exception:
+        checks += 0
 
     return checks
 
