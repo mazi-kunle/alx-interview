@@ -4,8 +4,6 @@ A script for parsing http request logs
 '''
 
 import datetime
-import time
-import sys
 
 
 def checkFormat(lst):
@@ -56,35 +54,42 @@ def checkFormat(lst):
     return checks
 
 
-read = True
-statusCodes = {'200': 0, '301': 0, '400': 0, '401': 0,
-               '403': 0, '404': 0, '405': 0, '500': 0}
-count = 0
-start = 1
+def run():
+    '''
+    runs the code
+    '''
+    read = True
+    statusCodes = {'200': 0, '301': 0, '400': 0, '401': 0,
+                   '403': 0, '404': 0, '405': 0, '500': 0}
+    count = 0
+    start = 1
 
-try:
-    while read:
-        user = input()
-        print(user)
-        if (checkFormat(user) == 6):
-            status = user.split(' ')[-2].rstrip()
-            filesize = int(user.split(' ')[-1])
-            count = count + filesize
+    try:
+        while read:
+            user = input()
+            print(user)
+            if (checkFormat(user) == 6):
+                status = user.split(' ')[-2].rstrip()
+                filesize = int(user.split(' ')[-1])
+                count = count + filesize
 
-            if (status in statusCodes.keys()):
-                statusCodes[status] += 1
+                if (status in statusCodes.keys()):
+                    statusCodes[status] += 1
 
-        if start % 10 == 0:
-            print(f'File size: {count}')
-            for (key, value) in statusCodes.items():
-                if value != 0:
-                    print(f'{key}: {value}')
+            if start % 10 == 0:
+                print(f'File size: {count}')
+                for (key, value) in statusCodes.items():
+                    if value != 0:
+                        print(f'{key}: {value}')
 
-        start += 1
+            start += 1
 
-except (KeyboardInterrupt):
-    start = 10
-    print(f'File size: {count}')
-    for (key, value) in statusCodes.items():
-        if value != 0:
-            print(f'{key}: {value}')
+    except (KeyboardInterrupt):
+        print(f'File size: {count}')
+        for (key, value) in statusCodes.items():
+            if value != 0:
+                print(f'{key}: {value}')
+
+
+if __name__ == '__main__':
+    run()
