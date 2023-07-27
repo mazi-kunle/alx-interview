@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-'''This is a module'''
+'''
+This is a module
+'''
 
 import datetime
 import time
 import sys
+
 
 def checkFormat(lst):
     '''
@@ -53,8 +56,8 @@ def checkFormat(lst):
     return checks
 
 read = True
-statusCodes = {'200': 0, '301': 0, '400': 0, '401':0,
-              '403':0, '404': 0, '405':0, '500':0}
+statusCodes = {'200': 0, '301': 0, '400': 0, '401': 0,
+                '403': 0, '404': 0, '405': 0, '500': 0}
 count = 0
 
 while read:
@@ -63,7 +66,6 @@ while read:
         # user = input()
         try:
             user = input()
-        
             if (checkFormat(user) == 6):
                 status = user.split(' ')[-2].rstrip()
                 filesize = int(user.split(' ')[-1])
@@ -79,7 +81,7 @@ while read:
                 if value != 0:
                     print(f'{key}: {value}')
             time.sleep(0.01)
-        
+            
         if start == 9:
             print(f'File size: {count}')
             for (key, value) in statusCodes.items():
