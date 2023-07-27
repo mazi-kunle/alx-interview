@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-This is a module
+A script for parsing http request logs
 '''
 
 import datetime
