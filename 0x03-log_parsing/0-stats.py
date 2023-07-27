@@ -83,7 +83,7 @@ def run():
 
             start += 1
 
-    except (KeyboardInterrupt):
+    except (EOFError, KeyboardInterrupt):
         print(f'File size: {count}')
         for (key, value) in statusCodes.items():
             if value != 0:
