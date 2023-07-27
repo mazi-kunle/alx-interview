@@ -67,7 +67,6 @@ def run():
     try:
         while read:
             user = input()
-            print(user)
             if (checkFormat(user) == 6):
                 status = user.split(' ')[-2].rstrip()
                 filesize = int(user.split(' ')[-1])
