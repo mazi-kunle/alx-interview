@@ -27,6 +27,8 @@ def validUTF8(data):
         else:
             if (bin(i >> 6) == '0b10'):
                 remainder = remainder - 1
+            else:
+                return False
 
     return (remainder == 0)
 
