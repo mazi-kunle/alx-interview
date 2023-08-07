@@ -18,7 +18,7 @@ def validUTF8(data):
                 remainder = 0
             elif (bin(i >> 5) == '0b110'):
                 remainder = 1
-            elif (i >> 4 == 1110):
+            elif (bin(i >> 4) == '0b1110'):
                 remainder = 2
             elif (bin(i >> 3) == '0b11110'):
                 remainder = 3
