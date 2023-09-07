@@ -71,4 +71,4 @@ def isWinner(x, nums):
     else:
         winner = 'Ben'
 
-    return f'Winner: {winner}'
+    return winner
