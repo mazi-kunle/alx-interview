@@ -37,6 +37,9 @@ def getMultiple(num, arr):
 def isWinner(x, nums):
     '''check for winner
     '''
+    if x <= 0:
+        return None
+
     data = {'Maria': 0, 'Ben': 0}
 
     for i in nums:
