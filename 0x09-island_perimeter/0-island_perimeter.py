@@ -18,7 +18,6 @@ def island_perimeter(grid):
                     connected = connected + 1
                 if j > 0 and grid[i][j-1]:
                     connected = connected + 1
-                    print(i, j)
 
     return p - (connected * 2)
 
